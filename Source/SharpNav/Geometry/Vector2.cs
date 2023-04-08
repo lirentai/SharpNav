@@ -22,7 +22,7 @@ SOFTWARE.
  */
 #endregion
 
-#if !MONOGAME && !OPENTK && !SHARPDX && !XNA && !UNITY3D
+#if !MONOGAME && !OPENTK && !SHARPDX && !XNA
 
 using System;
 using System.Runtime.InteropServices;
