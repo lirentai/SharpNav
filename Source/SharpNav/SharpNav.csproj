@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SharpNav</RootNamespace>
     <AssemblyName>SharpNav</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>212ed65d</NuGetPackageImportStamp>
@@ -32,7 +32,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\..\Binaries\SharpNav\Standalone\</OutputPath>
-    <DefineConstants>TRACE;STANDALONE</DefineConstants>
+    <DefineConstants>TRACE;STANDALONE;YAML;NEWTON_JSON</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <SignAssembly>true</SignAssembly>
@@ -70,6 +70,13 @@
     <Prefer32Bit>false</Prefer32Bit>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Unity3D|AnyCPU'">
+    <OutputPath>..\..\Binaries\SharpNav\Unity3D\</OutputPath>
+    <DefineConstants>TRACE;UNITY3D</DefineConstants>
+    <Optimize>true</Optimize>
+    <DocumentationFile>..\..\Binaries\SharpNav\Unity3D\SharpNav.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <!-- Common items -->
   <ItemGroup>
@@ -136,6 +143,7 @@
     <Compile Include="Heightfield.Rasterization.cs" />
     <Compile Include="HeightPatch.cs" />
     <Compile Include="Crowds\LocalBoundary.cs" />
+    <Compile Include="IO\Binary\NavMeshBinarySerializer.cs" />
     <Compile Include="IO\Json\AreaConverter.cs" />
     <Compile Include="IO\Json\PolyIdConverter.cs" />
     <Compile Include="IO\Json\Vector3Converter.cs" />
