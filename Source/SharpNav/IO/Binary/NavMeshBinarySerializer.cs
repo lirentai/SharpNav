@@ -27,6 +27,7 @@ namespace SharpNav.IO.Binary
             var reader = new BinaryReader(stream);
             ReadMeta(reader);
             var data = ReadInfo(reader);
+            reader.Close();
             return data;
         }
 
@@ -41,6 +42,8 @@ namespace SharpNav.IO.Binary
             WriteMeta(writer);
             WriteInfo(writer, mesh);
             WriteTiles(writer, mesh);
+            writer.Flush();
+            writer.Close();
         }
 
         void WriteMeta(BinaryWriter writer)
